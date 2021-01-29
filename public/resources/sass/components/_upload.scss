@@ -1,0 +1,25 @@
+.upload {
+  padding: 4rem;
+  margin: 5rem 0;
+  margin-top: 10rem;
+  border: 0.2rem solid $color-main;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-align: right;
+
+  &__text {
+    display: block;
+    width: 100%;
+    resize: none;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    background: transparent;
+    color: $color-wight;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

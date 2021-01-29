@@ -1,0 +1,74 @@
+<%- include('layout/header') %> 
+<header class="heading">
+  <h1 class="heading__logo">
+    <a href="/"> M&S </a>
+  </h1>
+
+  <nav class="heading__navbar">
+    <input
+      type="checkbox"
+      name="checkbox"
+      class="heading__navbar--checkbox"
+      id="checkbox"
+    />
+    <label
+      class="heading__navbar--label"
+      for="checkbox"
+    >
+      <span></span>
+    </label>
+    <div class="heading__navbar--menu">
+      <a href="/">
+        <img
+          src="/profiles/<%= user.avatar %>"
+          class="menu__img"
+          alt="profile"
+        />
+      </a>
+    </div>
+  </nav>
+</header>
+
+<section class="profile">
+    <div class="profile__img">
+      <img
+        src="/profiles/<%= user.avatar %>"
+        alt=""
+      />
+    </div>
+
+    <h2 class="profile__name"><%= user.username %></h2>
+  </section>
+    <% for(let i=0;i<memories.length;i++){ %>
+    <div class="container">
+    <section class="post">
+      <div class="post__header">
+        <div class="post__header--accounnt">
+          <form action="/delete/<%= memories[i].id %>" method="POST">
+            <input
+            type="submit"
+            value="Delete"
+            class="upload__button btn btn__main"
+          />
+          </form>
+          
+        </div>
+
+        <div class="post__header--date">
+          <h3><%= memories[i].publish_date %></h3>
+        </div>
+      </div>
+
+      <div class="post__text">
+        <p>
+          <%= memories[i].description %>
+        </p>
+      </div>
+    </div>
+      <% } %>
+      <% if(memories.length===0){ %>
+        <h1 class="no-memories">No Memories Left</h1>
+        <% } %>
+    </section>
+  </div>
+<%- include('layout/footer') %> 

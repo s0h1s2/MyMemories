@@ -1,0 +1,81 @@
+<%- include('layout/header');-%>
+<header class="heading">
+      <h1 class="heading__logo">
+        <a href="/"> M&S </a>
+      </h1>
+
+      <nav class="heading__navbar">
+        <input
+          type="checkbox"
+          name="checkbox"
+          class="heading__navbar--checkbox"
+          id="checkbox"
+        />
+        <label
+          class="heading__navbar--label"
+          for="checkbox"
+        >
+          <span></span>
+        </label>
+        <div class="heading__navbar--menu">
+          <a href="/myprofile">
+            <img
+              src="/profiles/<%= user.avatar %>"
+              class="menu__img"
+              alt="profile"
+            />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+
+    <div class="container">
+      <section class="upload">
+        <form method="POST" action="/memories">
+        <textarea
+          name="memories"
+          placeholder="what was happened..."
+          class="upload__text"
+          cols="30"
+          rows="10"
+        ></textarea>
+
+        <input
+          type="submit"
+          value="post"
+          class="upload__button btn btn__main"
+        />
+      </form>
+      </section>
+      <% for(let i=0;i<memories.length;i++){ %>
+      <section class="post">
+        <div class="post__header">
+          <div class="post__header--accounnt">
+            <a href="/">
+              <img
+                class="post__header--img"
+                src="/profiles/<%= user.avatar %>"
+                alt=""
+              />
+            </a>
+            <h3 class="post__header--name">
+              <%= user.username %> 
+            </h3>
+          </div>
+
+          <div class="post__header--date">
+            <h3><%= memories[i].publish_date %></h3>
+          </div>
+        </div>
+
+        <div class="post__text">
+          <p>
+            <%= memories[i].description %> 
+          </p>
+        </div>
+      </section>
+      <%}%>
+    </div>
+
+<%- include('layout/footer');-%>

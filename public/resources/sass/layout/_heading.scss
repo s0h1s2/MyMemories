@@ -1,0 +1,103 @@
+.heading {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 8rem;
+  width: 100%;
+  background-color: $color-secondary;
+  border-bottom: 0.3rem solid $color-main;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    position: fixed;
+    top: 2.5rem;
+    left: 3rem;
+    z-index: 10;
+    a {
+      color: $color-wight;
+      text-decoration: none;
+      font-size: 2.4rem;
+    }
+  }
+
+  &__navbar {
+    position: relative;
+    &--checkbox {
+      display: none;
+    }
+
+    &--label {
+      width: 4rem;
+      height: 4rem;
+      text-align: center;
+      z-index: 4;
+      transition: all 0.5s;
+      position: fixed;
+      top: 3rem;
+      right: 3rem;
+
+      span {
+        display: inline-block;
+        transition: all 0.4s;
+        position: relative;
+
+        &,
+        &::before,
+        &::after {
+          content: "";
+          width: 3rem;
+          height: 0.3rem;
+          background: $color-wight;
+        }
+
+        &::before,
+        &::after {
+          position: absolute;
+          left: 0;
+        }
+
+        &::before {
+          top: -1rem;
+        }
+
+        &::after {
+          top: 1rem;
+        }
+      }
+    }
+
+    &--menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 100vh;
+      background: $color-secondary;
+      border-left: 0.1rem solid $color-main;
+      transition: all 0.4s cubic-bezier(0.87, 0, 0.13, 1);
+      text-align: center;
+    }
+    .menu__img {
+      margin: 0 auto;
+      border: 0.2rem solid $color-main;
+      margin-top: 12rem;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background-color: rosybrown;
+    }
+
+    &--checkbox:checked ~ &--label span {
+      transform: rotate(90deg);
+    }
+
+    &--checkbox:checked ~ &--menu {
+      width: 10rem;
+    }
+  }
+}

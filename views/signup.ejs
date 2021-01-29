@@ -1,0 +1,62 @@
+<%- include('layout/header');-%>
+<div class="Signup">
+    <div class="container">
+      <div class="Signup__heading">
+        <h1 class="Signup__heading--main">M&S</h1>
+        <h2 class="Signup__heading--secondary">
+          Signup to M&S
+        </h2>  
+      </div>
+      <% if(messages.error){ %>
+      <div class="feedback">
+        <p><%= messages.error %></p>
+      </div>
+      <%}%>
+      <form method="POST" class="Signup__form" enctype="multipart/form-data">
+        <input
+          type="name"
+          name="username"
+          class="Signup__form--input"
+          placeholder="Enter your name"
+        />
+        <input
+          type="email"
+          name="email"
+          class="Signup__form--input"
+          placeholder="Enter your email"
+        />
+
+        <input
+          type="date"
+          name="birthday"
+          class="Signup__form--input"
+        />
+        <input
+          type="password"
+          name="password"
+          class="Signup__form--input"
+          placeholder="Enter your password"
+        />
+        <input
+          type="password"
+          name="confirm_password"
+          class="Signup__form--input"
+          placeholder="Repeat your password"
+        />
+        <input id="file-input" type="file" name="avatar" style="display: none;" />
+        <input
+          type="button"
+          value="upload a photo"
+          class="Signup__form--input Signup__form--uploadphoto"
+          onclick="document.getElementById('file-input').click()"
+        />
+        
+        <input
+          type="submit"
+          value="Signup"
+          class="Signup__form--input"
+        />
+      </form>
+    </div>
+  </div>
+<%- include('layout/footer');-%>

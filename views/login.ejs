@@ -1,0 +1,41 @@
+<%- include('layout/header');-%>
+<div class="login">
+    <div class="container">
+      <div class="login__heading">
+        <h1 class="login__heading--main">M&S</h1>
+
+        <h2 class="login__heading--secondary">
+          login to M&S
+        </h2>
+      </div>
+      <% if(messages.error){ %>
+        <div class="feedback">
+          <p><%= messages.error %></p>
+        </div>
+        <%}%>
+      <form action="/users/login" method="POST" class="login__form">
+        <input
+          type="email"
+          name="email"
+          class="login__form--input"
+          placeholder="enter your email"
+        />
+        <input
+          type="password"
+          name="password"
+          class="login__form--input"
+          placeholder="enter your password"
+        />
+        <input
+          type="submit"
+          value="login"
+          class="login__form--input"
+        />
+      </form>
+      <div class="login__reg-for">
+        <a href="/users/signup">Sign up for M&S</a>
+      </div>
+    </div>
+  </div>
+
+<%- include('layout/footer');-%>

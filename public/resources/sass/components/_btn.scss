@@ -1,0 +1,28 @@
+.btn {
+  padding: 2rem 6rem;
+  border: none;
+  border-radius: 50rem;
+  font-size: 1.6rem;
+  transition: all 0.4s;
+
+  &__main {
+    background: $color-main;
+    color: $color-wight;
+  }
+
+  &:hover {
+    transform: translateY(-6%);
+    box-shadow: 0 1rem 4rem
+      rgba($color: #000000, $alpha: 0.3);
+  }
+
+  &:active {
+    transform: translateY(-3%);
+    box-shadow: 0 1rem 3rem
+      rgba($color: #000000, $alpha: 0.6);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,40 @@
+.post {
+  margin: 5rem 0;
+  padding: 4rem;
+  border: 0.2rem solid $color-main;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  &__header {
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--accounnt {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    &--img {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+      border: 0.3rem solid $color-main;
+    }
+
+    &--name {
+      color: $color-wight;
+    }
+
+    &--date {
+      color: $color-wight;
+    }
+  }
+
+  &__text {
+    color: $color-wight;
+    font-size: 1.6rem;
+  }
+}

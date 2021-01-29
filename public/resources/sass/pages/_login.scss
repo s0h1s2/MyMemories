@@ -1,0 +1,73 @@
+.login {
+  height: 100vh;
+  background-color: $color-secondary;
+  color: $color-wight;
+  overflow: hidden;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  &__heading {
+    text-align: center;
+    &--main {
+      font-size: 5rem;
+    }
+    &--secondary {
+      font-size: 2rem;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    &--input {
+      padding: 2rem 8rem;
+      text-transform: capitalize;
+      border: none;
+      border-radius: 1rem;
+
+      &::placeholder {
+        color: $color-gray;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:last-child {
+        background-color: $color-main;
+        border-radius: 50rem;
+        color: $color-wight;
+        transition: all 0.4s;
+
+        &:hover {
+          transform: translateY(-6%);
+          box-shadow: 0 1rem 4rem
+            rgba($color: #000000, $alpha: 0.3);
+        }
+
+        &:active {
+          transform: translateY(-3%);
+          box-shadow: 0 1rem 3rem
+            rgba($color: #000000, $alpha: 0.6);
+        }
+      }
+    }
+  }
+
+  &__reg-for {
+    a {
+      color: $color-main;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+}

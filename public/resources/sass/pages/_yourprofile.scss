@@ -1,0 +1,24 @@
+.profile {
+  margin-top: 15rem;
+  text-align: center;
+
+  &__img {
+    margin: auto;
+    margin-bottom: 1rem;
+    width: 20rem;
+    height: 20rem;
+    border: 0.2rem solid $color-main;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 150%;
+      height: 100%;
+    }
+  }
+
+  &__name {
+    font-size: 2rem;
+    color: $color-wight;
+  }
+}
