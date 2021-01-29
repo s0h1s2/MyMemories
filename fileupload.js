@@ -6,7 +6,7 @@ console.log(root);
 
 const storage=multer.diskStorage({
     destination:function(req,file,cb){
-        cb(null,'/profiles/');
+        cb(null,'public/profiles/');
     },
     filename:function(req,file,cb){
         cb(null,Date.now()+path.extname(file.originalname));
